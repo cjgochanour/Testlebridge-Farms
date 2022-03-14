@@ -14,7 +14,7 @@ namespace Trestlebridge.Models
             This method must specify the correct product interface of the
             resource being purchased.
          */
-        public void PurchaseResource<T> (IResource resource, int index)
+        public void PurchaseResource<T>(IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
@@ -22,12 +22,15 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Ostrich":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
                 default:
                     break;
             }
         }
 
-        public void AddGrazingField (GrazingField field)
+        public void AddGrazingField(GrazingField field)
         {
             GrazingFields.Add(field);
         }
